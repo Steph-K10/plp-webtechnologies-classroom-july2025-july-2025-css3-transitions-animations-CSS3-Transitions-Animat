@@ -1,0 +1,487 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff8f0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(to right, #d2691e, #a52a2a);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+/* Navigation */
+.navigation {
+    background-color: #f1e1c6;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navigation li {
+    margin: 0 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #8b4513;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #8b4513;
+    color: white;
+}
+
+/* Demo Cards */
+.demo-card {
+    background-color: #f9f3e8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+/* Recipe Card with Image Overlay */
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+    padding: 1.5rem 1rem 1rem;
+    text-align: center;
+}
+
+.image-overlay h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.image-overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Adjust card back for better readability */
+/* Card back with scrollable content */
+.card-back {
+    background-color: #8b4513;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Remove padding from card-back itself */
+}
+
+/* Scrollable content container */
+.card-content {
+    padding: 0;
+    overflow-y: auto; /* Make this container scrollable */
+    height: 100%; /* Take full height of card back */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* Card back header */
+.card-back h4 {
+    margin-top: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 1.5rem 0.5rem;
+    margin-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    background-color: #8b4513;
+    z-index: 10;
+}
+
+/* Ingredients list */
+.card-back ul {
+    text-align: left;
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.card-back li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+.ingredients-list,
+.instructions,
+.tips {
+    padding: 0 1.5rem 1rem; /* Padding on sides and bottom */
+}
+
+.ingredients-list ul {
+    text-align: left;
+    padding-left: 1.2rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.ingredients-list li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Instructions section */
+.instructions {
+    margin-top: 1.5rem;
+}
+
+.instructions h4 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.instructions ol {
+    padding-left: 1.2rem;
+}
+
+.instructions li {
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+/* Custom scrollbar for card back */
+.card-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.card-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.card-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+/* Part 1: CSS3 Animations */
+.btn-hover-effect {
+    background-color: #d2691e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+}
+
+.btn-hover-effect:hover {
+    background-color: #a52a2a;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-hover-effect-2 {
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: 0.5rem;
+}
+
+.btn-hover-effect-2:hover {
+    background-color: #6b3410;
+    transform: scale(1.1) rotate(3deg);
+}
+
+.animated-cookie {
+    font-size: 5rem;
+    margin: 1rem auto;
+    transition: all 0.5s ease;
+}
+
+.animated-cookie:hover {
+    transform: translateX(100px) rotate(90deg);
+}
+
+.spin-animation {
+    font-size: 5rem;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.pastry-animation {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+.pastry {
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+.pastry:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.pastry:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Part 2: JavaScript Functions */
+.function-demos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.fun-btn {
+    background: linear-gradient(to right, #d2691e, #a52a2a);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.fun-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.fun-btn:active {
+    transform: translateY(1px);
+}
+
+input, select {
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #f1e1c6;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 250px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #d2691e;
+    box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.3);
+}
+
+.result {
+    font-weight: bold;
+    color: #d2691e;
+    margin-top: 15px;
+    min-height: 20px;
+    padding: 10px;
+    background-color: #fffaf0;
+    border-radius: 8px;
+    border-left: 4px solid #d2691e;
+}
+
+/* Timer Styles */
+.timer-display {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+    color: #d2691e;
+    font-family: monospace;
+}
+
+.timer-progress {
+    height: 8px;
+    background-color: #f1e1c6;
+    border-radius: 4px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.timer-progress::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #d2691e, #a52a2a);
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s linear;
+}
+
+/* Part 3: Combined Effects */
+
+/* Card Flip */
+.card-container {
+    perspective: 1000px;
+    width: 200px;
+    height: 250px;
+    margin: 1rem auto;
+    cursor: pointer;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background-color: #f1e1c6;
+    color: #8b4513;
+}
+
+.card-back {
+    background-color: #8b4513;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Notification */
+.notification {
+    background-color: #4caf50;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Utility Animations */
+.animate-pop {
+    animation: popIn 0.8s ease;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}

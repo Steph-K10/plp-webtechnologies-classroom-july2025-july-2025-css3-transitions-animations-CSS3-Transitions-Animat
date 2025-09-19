@@ -1,0 +1,205 @@
+<!-- Week 7: MOdifying page with animations. transitions, and advanced JS functions  -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonte's Sweet Delights</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="title animate-pop">🍪 Jonte Fresh's Sweet Delights Bakery</h1>
+            <p class="tagline animate-fade-in">Where every treat is made with love</p>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <div class="container">
+            <ul>
+                <li><a href="#animations" class="nav-link">CSS Animations</a></li>
+                <li><a href="#functions" class="nav-link">JS Functions</a></li>
+                <li><a href="#combinations" class="nav-link">Combined Effects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Part 1: CSS3 Transitions and Animations -->
+        <section id="animations" class="section">
+            <h2>Part 1: CSS3 Transitions and Animations</h2>
+            <p>Enhancing elements with CSS transitions and keyframe animations.</p>
+            
+            <div class="animation-demos">
+                <div class="demo-card">
+                    <h3>Button Hover Effects</h3>
+                    <button class="btn-hover-effect">Hover over Me🥹</button>
+                    <button class="btn-hover-effect-2">Hover over Me Too😤</button>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Transform Animations</h3>
+                    <div class="animated-cookie">🍪</div>
+                    <div class="animated-cake spin-animation">🍰</div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Keyframe Animations</h3>
+                    <div class="pastry-animation">
+                        <div class="pastry">🥐</div>
+                        <div class="pastry">🍰</div>
+                        <div class="pastry">🍪</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 2: JavaScript Functions -->
+        <section id="functions" class="section">
+            <h2>Part 2: JavaScript Functions — Scope, Parameters & Return Values</h2>
+            <p>Explore baking-related functions with parameters, return values, and scope awareness.</p>
+            
+            <div class="function-demos">
+                <div class="demo-card">
+                    <h3>🧁 Cupcake Multiplier</h3>
+                    <p>How many cupcakes do you need for your event?</p>
+                    <p>Let us know how many guests you will have, and rate them on a scale of polite to biblical levels of greed </p>
+                    <input type="number" id="guestCount" placeholder="Number of guests" min="1" value="15">
+                    <select id="guestAppetite">
+                        <option value="0.5">Polite eaters (½ cupcake per guest)</option>
+                        <option value="1" selected>Standard (1 cupcake per guest)</option>
+                        <option value="1.5">Hungry-ish (1.5 cupcakes per guest)</option>
+                        <option value="2">Didn't eat at home (2 cupcakes per guest)</option>
+                        <option value="3">Biblical levels of greed (3 cupcakes per guest)</option>
+                    </select>
+                    
+                    <button class="fun-btn" onclick="calculateCupcakes()">Calculate Cupcakes</button>
+                    
+                    <div id="cupcakeResult" class="result"></div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>🎂 Cake Baker</h3>
+                    <p>Calculate ingredients for your cake:</p>
+                    <select id="cakeSize" onchange="calculateCake()">
+                        <option value="small">Small (6")</option>
+                        <option value="medium" selected>Medium (8")</option>
+                        <option value="large">Large (10")</option>
+                        <option value="xlarge">Extra Large (12")</option>
+                    </select>
+                    <select id="cakeType" onchange="calculateCake()">
+                        <option value="vanilla">Vanilla</option>
+                        <option value="chocolate" selected>Chocolate</option>
+                        <option value="redVelvet">Red Velvet</option>
+                    </select>
+                    <div id="cakeResult" class="result"></div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>⏰ Baking Timer</h3>
+                    <p>Set a timer for your baked goods(Min and Seconds):</p>
+                    
+                    <div class="timer-inputs">
+                        <input type="number" id="timerMinutes" placeholder="Minutes" min="0" max="120" value="15">
+                        <input type="number" id="timerSeconds" placeholder="Seconds" min="0" max="59" value="0">
+                    </div>
+                    
+                    <div class="timer-controls">
+                        <button class="fun-btn" onclick="startTimer()">Start Timer</button>
+                        <button class="fun-btn" onclick="pauseTimer()">Pause</button>
+                        <button class="fun-btn" onclick="resetTimer()">Reset</button>
+                    </div>
+                    
+                    <div id="timerDisplay" class="timer-display">15:00</div>
+                    <div id="timerProgress" class="timer-progress"></div>
+                    <p id="timerResult" class="result"></p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🍪 Cookie Price Calculator</h3>
+                    <p>Calculate the price for your cookie order:</p>
+                    <input type="number" id="cookieCount" placeholder="Number of cookies" min="1" value="12">
+                    <input type="number" id="cookiePrice" placeholder="Price per cookie (Sh)" min="50" step="50" value="100">
+                    <button class="fun-btn" onclick="calculateCookiePrice()">Calculate Price</button>
+                    <p id="priceResult" class="result"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Combining CSS Animations with JavaScript -->
+        <section id="combinations" class="section">
+            <h2>Part 3: Combining CSS Animations with JavaScript</h2>
+            <p>Using JavaScript to trigger CSS animations dynamically.</p>
+            
+            <div class="combination-demos">
+                <div class="demo-card">
+                    <h3>Recipe Card Flip</h3>
+                    <p>Click the card to view the recipe:</p>
+                    <div class="card-container" onclick="flipCard()">
+                        <div class="card">
+                            <div class="card-front">
+                                <div class="card-image">
+                                    <img src="./images/cookies.jpg" alt="Red Velvet White Chocolate Chip Cookies">
+                                    <div class="image-overlay">
+                                        <h4>Red Velvet White Chocolate Chip Cookies</h4>
+                                        <p>Click to view recipe</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <div class="card-content">
+                                    <h4>Ingredients</h4>
+                                    <ul>
+                                        <li>2 ¼ cups all-purpose flour</li>
+                                        <li>¼ cup cocoa powder</li>
+                                        <li>1 tsp baking soda</li>
+                                        <li>½ tsp salt</li>
+                                        <li>1 cup unsalted butter, softened</li>
+                                        <li>¾ cup granulated sugar</li>
+                                        <li>¾ cup brown sugar, packed</li>
+                                        <li>2 large eggs</li>
+                                        <li>1 tbsp red food coloring</li>
+                                        <li>2 tsp vanilla extract</li>
+                                        <li>1 ½ cups white chocolate chips</li>
+                                    </ul>
+                                    <div class="instructions">
+                                        <h4>Instructions</h4>
+                                        <ol>
+                                            <li>Preheat oven to 375°F (190°C). Line baking sheets with parchment paper.</li>
+                                            <li>In a medium bowl, whisk together flour, cocoa powder, baking soda, and salt.</li>
+                                            <li>In a large bowl, cream together the butter, granulated sugar, and brown sugar until light and fluffy.</li>
+                                            <li>Beat in eggs one at a time, then mix in red food coloring and vanilla extract.</li>
+                                            <li>Gradually blend in the flour mixture until just combined.</li>
+                                            <li>Stir in the white chocolate chips.</li>
+                                            <li>Drop rounded tablespoons of dough onto the prepared baking sheets, spacing about 2 inches apart.</li>
+                                            <li>Bake for 9-11 minutes, or until edges are set but centers are still soft.</li>
+                                            <li>Allow cookies to cool on baking sheet for 5 minutes before transferring to wire racks to cool completely.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="demo-card">
+                    <h3>Order Notification</h3>
+                    <p>Place your order:</p>
+                    <button onclick="showOrderNotification()">Place Order</button>
+                    <div id="orderNotification" class="notification">
+                        <p>Your order has been placed! 🎉</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Jonte's Sweet Delights. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
